@@ -97,6 +97,9 @@ body {
   align-items: center;
   flex-direction: row;
 }
+#gridContainer .trackCard img:hover {
+  opacity: 0.7;
+}
 #gridContainer .trackCard h2 {
   font-size: 1.125rem;
   font-weight: 400;

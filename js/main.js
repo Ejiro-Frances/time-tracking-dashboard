@@ -1,34 +1,8 @@
-// const titleEl = document.querySelector("h2");
-// const currentEl = document.querySelector("h3");
-// const previousEl = document.querySelector("p");
-// const listEl = document.querySelectorAll("li");
-// const dailyEl = document.querySelectorAll(".daily");
-// const weeklyEl = document.querySelectorAll(".weekly");
-
-// listEl.forEach((item) => {
-//   item.addEventListener("click", () => {
-//     const dayEl = document.querySelector(".day");
-//     const weekEl = document.querySelector(".week");
-
-//     dailyEl.forEach((el) => el.classList.add("hide"));
-//     weeklyEl.forEach((el) => el.classList.add("hide"));
-//     monthlyEl.forEach((el) => el.classList.add("hide"));
-
-//     if (item === "dayEl") {
-//       dailyEl.forEach((el) => el.classList.remove("hide"));
-//     } else if (item === "week") {
-//       weeklyEl.forEach((el) => el.classList.remove("hide"));
-//     } else if (item.id === "month") {
-//       monthlyEl.forEach((el) => el.classList.remove("hide"));
-//     }
-//   });
-// });
-
-// Select all the necessary elements
 const listItems = document.querySelectorAll("li");
 const dailyElements = document.querySelectorAll(".daily");
 const weeklyElements = document.querySelectorAll(".weekly");
 const monthlyElements = document.querySelectorAll(".monthly");
+const trackCardImg = document.querySelectorAll(".trackCard img");
 
 // Function to toggle visibility based on selected time period
 const updateVisibility = (period) => {
@@ -58,5 +32,15 @@ listItems.forEach((item) => {
     // Get the class of the clicked item to determine the period
     const period = item.classList[0];
     updateVisibility(period);
+  });
+});
+
+// Add click event listeners to each img inside .trackCard
+trackCardImg.forEach((img) => {
+  img.addEventListener("click", () => {
+    // Remove the hide class from all period elements to display them
+    dailyElements.forEach((el) => el.classList.remove("hide"));
+    weeklyElements.forEach((el) => el.classList.toggle("hide"));
+    monthlyElements.forEach((el) => el.classList.toggle("hide"));
   });
 });

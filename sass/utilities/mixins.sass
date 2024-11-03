@@ -9,3 +9,13 @@
   justify-content: $justify
   align-items: $align
   flex-direction: $direction
+
+@mixin flex-between ($justify: space-between, $align: center, $direction: row)
+  display: flex
+  justify-content: $justify
+  align-items: $align
+  flex-direction: $direction
+
+@mixin background-set ($repeat: no-repeat, $position: 98% px-to-rem(-10) )
+  background-repeat: $repeat
+  background-position: $position

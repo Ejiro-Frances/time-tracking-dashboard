@@ -1,3 +1,4 @@
+@use 'sass:math'
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap')
 @import "./utilities/mixins.sass"
 
@@ -24,24 +25,36 @@ $base-font-size: 16
 
 // write a function to convert font
 @function px-to-rem($px-value)
-  @return #{$px-value / $base-font-size}rem
+  @return math.div($px-value, $base-font-size)*1rem
 
 =remify($properties...)
   @each $property, $value in $properties
     #{$property}: px-to-rem($value)
 
 *,
-*::before
+*::before,
 *::after
   box-sizing: border-box
+
+*
+  margin: 0
+  padding: 0
 
 body
   font-family: "Rubik", sans-serif
   background: $very-dark-blue
   color: $pale-blue
+  line-height: 1
 
 #gridContainer
   display: grid
+  margin: px-to-rem(10)
+  
+
+  .backCard
+    background: $dark-blue
+    border-radius: px-to-rem(10)
+    margin: px-to-rem(15)
 
   .jeremy
     background:$blueish-purple
@@ -56,30 +69,61 @@ body
   ul
     @include flex-around
     list-style: none
-    
-    li
+
+    a
+      text-decoration: none
+      color: inherit
 
   .card
     border-radius: px-to-rem(10)
     margin: px-to-rem(15)
     position: relative
-    
-
 
   .blueCard
     background: $dark-blue
     border-radius: px-to-rem(10)
-    margin: px-to-rem(15)
+    margin-top: px-to-rem(30)
 
+    .hide
+      display: none
+   
   .cardFlex
     @include display-flex
     gap: px-to-rem(15)
 
+  .trackCard
+    @include flex-between
+    padding: px-to-rem(15) px-to-rem(30)
+
   .work
     background: $light-red-work
     background-image: url("../images/icon-work.svg")
-    background-repeat: no-repeat
-    background-position: 98% px-to-rem(-10)
+    @include background-set
+
+  .play
+    background: $soft-blue-play
+    background-image: url("../images/icon-play.svg")
+    @include background-set
+
+  .study
+    background: $light-red-work
+    background-image: url("../images/icon-study.svg")
+    @include background-set
+
+  .exercise
+    background: $lime-green-exercise
+    background-image: url("../images/icon-exercise.svg")
+    @include background-set
+
+  .social
+    background:$violet-social
+    background-image: url("../images/icon-social.svg")
+    @include background-set
+
+  .selfCare
+    background:$soft-orange-self-care
+    background-image: url("../images/icon-self-care.svg")
+    @include background-set
 
 .attribution 
   font-size: 11px 

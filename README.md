@@ -1,6 +1,10 @@
-# Frontend Mentor - Time tracking dashboard solution
+# Time Tracking Dashboard
 
 This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw).
+
+## Overview
+
+A user-friendly time-tracking dashboard that displays time spent on various activities. The dashboard provides insights into daily, weekly, and monthly usage, helping users analyze how their time is allocated.
 
 ## The challenge
 
@@ -16,20 +20,13 @@ Users should be able to:
 
 ## My process
 
-- Mobile-first workflow
-- Learn to use Json
-
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Json
-- CSS Grid
+Using the Mobile-first workflow, this project was built using HTML for structuring the dashboard, SASS preprocessor for a visually appealing and responsive design and JavaScript for functionality to manage and display time-tracking data dynamically.
 
-### Links
+### Live Site
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [View the Live site here](https://time-tracking-dashboard-six-plum.vercel.app/)
 
 ## Author
 

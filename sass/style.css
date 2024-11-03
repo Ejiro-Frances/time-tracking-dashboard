@@ -16,7 +16,7 @@ body {
   color: hsl(0, 0%, 100%);
   line-height: 1;
   font-size: 1rem;
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
 #gridContainer {

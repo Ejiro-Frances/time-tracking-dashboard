@@ -32,6 +32,9 @@ $base-font-size: 16
   @each $property, $value in $properties
     #{$property}: px-to-rem($value)
 
+// break point
+$big-screen : 820px
+
 *,
 *::before,
 *::after
@@ -47,6 +50,7 @@ body
   color: $white
   line-height: 1
   font-size: px-to-rem(16)
+  padding: px-to-rem(16)
 
 #gridContainer
   display: grid
@@ -94,10 +98,11 @@ body
         color: inherit
         &:hover
           color: $pale-blue
+          cursor: pointer
   
   .card
     border-radius: px-to-rem(12)
-    margin: px-to-rem(15)
+    margin: px-to-rem(5)
     position: relative
 
   .blueCard
@@ -117,6 +122,7 @@ body
 
   .trackCard
     @include flex-between
+    cursor: pointer
     
     img
       &:hover
@@ -170,3 +176,38 @@ body
   
   a 
     color: $blue
+
+// media query
+@media screen and (min-width: $big-screen)
+  #gridContainer
+    grid-template-columns: repeat(4, 1fr) /* 4 equal columns */
+    grid-template-rows: repeat(2, auto)  /* 2 rows */
+    gap: 1rem /* Adjust as needed for spacing between cards */
+    
+    .backCard
+      grid-row: span 2
+      max-height: px-to-rem(420)
+    
+      ul
+        display: inline-block
+        padding: px-to-rem(15)
+
+        li
+          margin: px-to-rem(10)
+
+    .cardFlex
+      display: inline-block
+      min-width: 100%
+      padding-bottom: px-to-rem(20)
+
+      div
+        padding: px-to-rem(25) 0
+        max-width: 10ch
+        font-size: px-to-rem(28)
+
+    .blueCard
+      .single-display
+        display: inline-block
+
+      .hide
+        display: none

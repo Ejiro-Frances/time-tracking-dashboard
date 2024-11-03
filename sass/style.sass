@@ -19,6 +19,7 @@ $dark-blue: hsl(235, 46%, 20%)
 $desaturated-blue: hsl(235, 45%, 61%)
 $pale-blue: hsl(236, 100%, 87%)
 $blue: hsl(228, 45%, 44%)
+$white: hsl(0,0%,100%)
 
 // choose a base font
 $base-font-size: 16
@@ -43,58 +44,92 @@ $base-font-size: 16
 body
   font-family: "Rubik", sans-serif
   background: $very-dark-blue
-  color: $pale-blue
+  color: $white
   line-height: 1
+  font-size: px-to-rem(16)
 
 #gridContainer
   display: grid
   margin: px-to-rem(10)
   
-
   .backCard
     background: $dark-blue
-    border-radius: px-to-rem(10)
+    border-radius: px-to-rem(12)
     margin: px-to-rem(15)
 
   .jeremy
     background:$blueish-purple
-    border-radius: px-to-rem(10)
+    border-radius: px-to-rem(12)
+    padding: px-to-rem(20)
+    line-height: 1.4
 
     img
       max-width: px-to-rem(60)
-      background:$pale-blue
-      padding: px-to-rem(3)
+      background:$white
+      padding: px-to-rem(2)
       border-radius: 50%
 
+    div
+      p
+        font-weight: 300
+        font-size: px-to-rem(12)
+        color: $pale-blue
+ 
+      h1
+        font-weight: 300
+        color: $white
+        opacity: 0.9
+        
   ul
     @include flex-around
     list-style: none
+    padding: px-to-rem(20) 0
+    color: $desaturated-blue
 
-    a
-      text-decoration: none
-      color: inherit
-
+    li
+      &.active
+        color: $white
+      a
+        text-decoration: none
+        color: inherit
+        &:hover
+          color: $pale-blue
+  
   .card
-    border-radius: px-to-rem(10)
+    border-radius: px-to-rem(12)
     margin: px-to-rem(15)
     position: relative
 
   .blueCard
     background: $dark-blue
     border-radius: px-to-rem(10)
-    margin-top: px-to-rem(30)
-
+    margin-top: px-to-rem(33)
+    padding: px-to-rem(25) px-to-rem(30)
+    line-height: 1.5
+    
     .hide
       display: none
    
   .cardFlex
     @include display-flex
-    gap: px-to-rem(15)
+    gap: px-to-rem(20)
+    padding-left: px-to-rem(20)
 
   .trackCard
     @include flex-between
-    padding: px-to-rem(15) px-to-rem(30)
+    
+    h2
+      font-size: px-to-rem(18)
+      font-weight: 400
 
+    h3
+      font-size: px-to-rem(30)
+      font-weight: 300
+
+    p
+      color: $pale-blue
+      font-size: px-to-rem(16)
+   
   .work
     background: $light-red-work
     background-image: url("../images/icon-work.svg")

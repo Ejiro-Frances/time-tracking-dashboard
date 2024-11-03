@@ -1,4 +1,4 @@
-@mixin display-flex ($justify: center, $align: center, $direction: row)
+@mixin display-flex ($justify: flex-start, $align: center, $direction: row)
   display: flex
   justify-content: $justify
   align-items: $align
@@ -16,6 +16,7 @@
   align-items: $align
   flex-direction: $direction
 
-@mixin background-set ($repeat: no-repeat, $position: 98% px-to-rem(-10) )
+@mixin background-set ($repeat: no-repeat, $position: 95% px-to-rem(-6), $size: px-to-rem(61))
   background-repeat: $repeat
-  background-position: $position
+  background-position: $position 
+  background-size: $size

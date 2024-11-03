@@ -50,6 +50,11 @@ const updateVisibility = (period) => {
 // Add click event listeners to each list item
 listItems.forEach((item) => {
   item.addEventListener("click", () => {
+    // Remove 'active' class from all list items
+    listItems.forEach((li) => li.classList.remove("active"));
+
+    // Add 'active' class to the clicked item
+    item.classList.add("active");
     // Get the class of the clicked item to determine the period
     const period = item.classList[0];
     updateVisibility(period);

@@ -36,9 +36,26 @@ listItems.forEach((item) => {
 });
 
 // Add click event listeners to each img inside .trackCard
+// trackCardImg.forEach((img) => {
+//   img.addEventListener("click", () => {
+//     // Remove the hide class from all period elements to display them
+//     dailyElements.forEach((el) => el.classList.remove("hide"));
+//     weeklyElements.forEach((el) => el.classList.toggle("hide"));
+//     monthlyElements.forEach((el) => el.classList.toggle("hide"));
+//   });
+// });
+
+// Target each card and not all the images at the same time
 trackCardImg.forEach((img) => {
   img.addEventListener("click", () => {
-    // Remove the hide class from all period elements to display them
+    // Find the closest card container of the clicked image
+    const card = img.closest(".card");
+
+    // Toggle visibility for elements specific to this card only
+    const dailyElements = card.querySelectorAll(".daily");
+    const weeklyElements = card.querySelectorAll(".weekly");
+    const monthlyElements = card.querySelectorAll(".monthly");
+
     dailyElements.forEach((el) => el.classList.remove("hide"));
     weeklyElements.forEach((el) => el.classList.toggle("hide"));
     monthlyElements.forEach((el) => el.classList.toggle("hide"));

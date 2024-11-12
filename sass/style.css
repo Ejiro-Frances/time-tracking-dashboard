@@ -82,8 +82,6 @@ body {
   transition: height 0.3s ease;
 }
 #gridContainer .blueCard {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   background: hsl(235, 46%, 20%);
   border-radius: 0.625rem;
@@ -91,8 +89,6 @@ body {
   padding: 1.5625rem 1.875rem;
   line-height: 1.5;
   max-height: 60vh;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
 }
 #gridContainer .blueCard .hide {
   display: none;
